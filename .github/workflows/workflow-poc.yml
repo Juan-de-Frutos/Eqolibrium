@@ -5,7 +5,19 @@ on:
     branches:
       - main
     paths:
-      - '**.html' # Solo se activa si tocas el HTML
+      - '**.html'
+      - 'traducir.py'
+      - '.github/workflows/traducir.yml'
+      - 'images/**'
+      - 'assets/**'
+  workflow_dispatch:        # permite lanzarlo a mano desde la pestaña Actions
+
+permissions:
+  contents: read
+
+concurrency:
+  group: traduccion-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   translate_and_deploy:
@@ -13,28 +25,46 @@ jobs:
 
     steps:
       - name: Descargar código fuente
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Configurar Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.11'
 
       - name: Instalar librerías
-        run: |
-          pip install beautifulsoup4 deep-translator
+        run: pip install "beautifulsoup4==4.12.3" "deep-translator==1.11.4"
+
+      # Reutiliza las traducciones de ejecuciones anteriores: menos llamadas
+      # al servicio, menos riesgo de que te corte por exceso de peticiones.
+      - name: Restaurar caché de traducciones
+        uses: actions/cache@v4
+        with:
+          path: .cache_traduccion.json
+          key: traducciones-${{ hashFiles('**/*.html') }}
+          restore-keys: |
+            traducciones-
 
       - name: Ejecutar script de traducción
         run: python traducir.py
 
-      - name: Enviar al repositorio en Inglés
+      # Muy útil para la demo: puedes descargar el resultado desde la propia
+      # ejecución aunque el paso de publicación falle.
+      - name: Guardar la web traducida como artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-traducida
+          path: output
+          if-no-files-found: error
+
+      - name: Enviar al repositorio en inglés
         uses: cpina/github-action-push-to-another-repository@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.DESTINATION_REPO_TOKEN }}
         with:
-          source-directory: 'output' # Solo enviamos la carpeta con lo traducido y las imágenes
-          destination-github-username: 'Juan-de-Frutos' 
+          source-directory: 'output'
+          destination-github-username: 'Juan-de-Frutos'
           destination-repository-name: 'eqolibrium-en'
           user-email: bot-traductor@poc.com
-          commit-message: "Traducción automática de prueba"
+          commit-message: "Traducción automática de ${{ github.sha }}"
           target-branch: main
