@@ -1,0 +1,984 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Eqolibrium</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script type="text/javascript">
+			function ejemplo1() {
+			var aleatorio = Math.random();
+
+			</script> 
+		<style>
+            .moneda {
+                height: 40px;
+                width: 40px;
+                background: url(images/Moneda2.png);
+                margin: 0 auto;
+                animation: girar 1s steps(10) infinite;
+                position: absolute;
+                left: 17rem;
+                z-index: 2;
+                top: 4.5rem;
+            }
+			@keyframes girar{
+				0%{
+					background-position: 0;
+				}
+				100%{
+					background-position:-400px;
+				}
+			}
+			.deer{
+				height:138px;
+				width:67.5px;
+				background: url(images/Ciervo.png);
+				margin: 0 auto;
+				position: absolute;
+				left:18rem;
+				animation: salto 1s steps(24) infinite;
+				z-index:2;
+				top:2rem;
+			}
+			@keyframes salto{
+				0%{
+					background-position: 0;
+				}
+				100%{
+					background-position: -1620px;
+				}
+			}
+            .hourglass {
+                height: 344px;
+                width: 200px;
+                background: url(images/Hourglass.png);
+                margin: 0 auto;
+				position:relative;
+				z-index:1;
+				animation:arena 5s steps(7) infinite;
+            }
+            .bird1 {
+                height: 58px;
+                width: 70px;
+                background: url(images/Pajaro1.png);
+                margin: 0 auto;
+                animation: efectovolar 1s steps(9) infinite, volar 20s infinite;
+                animation-delay: 60s;
+                position: absolute;
+                z-index: 2;
+                top: 200px;
+                left: -200px;
+                animation-delay: 45s;
+            }
+            .bird2 {
+                height: 58px;
+                width: 70px;
+                background: url(images/Pajaro2.png);
+                margin: 0 auto;
+                animation: efectovolar 1s steps(9) infinite, volar 20s infinite;
+                position: absolute;
+                z-index: 2;
+                top: 0px;
+                left: -200px;
+                animation-delay: 30s;
+            }
+            .bird3 {
+                height: 62px;
+                width: 70px;
+                background: url(images/Pajaro3.png);
+                margin: 0 auto;
+                animation: efectovolar 1s steps(9) infinite, volar 20s infinite;
+                position: absolute;
+                z-index: 2;
+                top: 600px;
+                left: -200px;
+                animation-delay: 15s;
+            }
+            .bird4 {
+                height: 56px;
+                width: 70px;
+                background: url(images/Pajaro4.png);
+                margin: 0 auto;
+                animation: efectovolar 1s steps(9) infinite, volar 20s infinite;
+                position: absolute;
+                z-index: 2;
+                top: 400px;
+                left: -200px;
+				animation-delay:0s;
+            }
+			.cerdito{
+				height:200px;
+				width: 200px;
+				left:200px;
+				position: relative;
+				
+			}
+			.letrero1{
+				width:500px;
+			}
+            .letrero2 {
+                width: 750px;
+            }
+			@keyframes arena{
+				0%{
+
+					background-position: 0px;
+					left:0%;
+				}
+				100%{
+					background-position: -1400px;
+					left:-9%;
+				}
+
+
+			}
+            @keyframes efectovolar {
+                0% {
+                    background-position: 0px;
+                }
+
+                100% {
+                    background-position: -630px;
+                }
+            }
+            @keyframes volar{
+                0% {
+                    left: 0;
+                }
+				100%{
+					left:90rem;
+				}
+            }
+			.logo{
+				height: 2rem;
+				width: 1.5rem;
+			}
+			.Typing{
+				display: block;
+				font-family: monospace;
+				white-space:nowrap;
+				border-right: 2px solid;
+				width:37ch;
+
+				animation: typing 2s steps(37), blink 0.5s infinite step-end alternate;
+				overflow:hidden;
+			}
+			@keyframes typing{
+                from {
+                    width: 0
+                }
+                }
+				
+			@keyframes blink{
+				50%{ border-color: transparent}
+			}
+			.huella{
+				height:338px;
+				width: 590px;
+				position: relative;
+				background: url(images/Huella.jpg);
+				left: -10px;
+			}
+			.Send{
+				background: rgb(3, 152, 252);
+				text-decoration-color=white;
+				border: 2px solid ;
+				width: 80px;
+				float:  right;
+			}
+			.Back{
+				background: rgb(3, 152, 252);
+				text-decoration-color=white;
+				border: 2px solid ;
+				width: 80px;
+				float:  left;
+			}
+			.Continue{
+				background: rgb(3, 152, 252);
+				text-decoration-color=white;
+				border: 2px solid ;
+				width: 200px;
+				float:  right;
+			}
+			.QuizzTitle{
+				white-space: nowrap;
+				border-bottom: solid 1px #ffffff;
+				width: -moz-max-content;
+				width: -webkit-max-content;
+				width: -ms-max-content;
+				width: max-content;
+				padding-bottom: 0.5rem;
+				margin: 0 0 2rem 0;
+			}
+			.UnifyDiv{
+				white-space: nowrap;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+
+			<div id="wrapper">
+			<div class="bird1"></div>
+			<div class="bird2"></div>
+			<div class="bird3"></div>
+			<div class="bird4"></div>
+
+				<!-- Header -->
+
+					<header id="header">
+						<div class="logo">
+							<span><img src="images/Logo.png" class="logo"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>E<strong><font color="lime">Q</font></strong>OLIBRIUM</h1>
+								
+							<p><h3>La mano amiga del e<font color="lime">c</font>ologismo</h3></p>
+							
+							<br>
+							<marquee scrolldelay=100 class="letrero2">
+								<p>Esta web está programada con cariño (y miles de líneas de código)
+							&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Se ha utilizado HTML 5, filtros de CSS y JavaScript
+							&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Si te gusta nuestra iniciativa, síguenos en las redes, las encontrarás en "Contáctanos", ¡muchas gracias! =D
+							&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  También puedes colaborar actívamente con otros proyectos en "Donaciones"
+							&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Si quieres saber sobre nuestra historia... ¡Clica en "¿Quiénes somos?"!
+							&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  ¿Aún no conoces tu huella ecológica ni cómo disminuirla? Entra YA en "Mide tu huella Ecológica" y descúbrelo.
+								</p>
+							</marquee>
+							<div align="center"><span class="Typing">Piensa globalmente, actúa localmente &nbsp <!--<div class="hourglass"></div>--></span></div>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#intro"><strong>¿Quiénes somos?</strong></a></li>
+								<li><a href="#Huella"><strong>mide tu huella ecológica</strong></a></li>
+								<li><a href="#donaciones"><strong>Donaciones </strong></a></li>
+								<li><a href="#Info"><strong>&nbspArtículos e Información</strong></a></li>
+								<li><a href="#contact"><strong>&nbspContáctanos</strong></a></li>
+								<li><a href="#LogIn"><strong>&nbspIniciar Sesión</strong></a></li>
+								<!--<li><a href="#elements">Elements</a></li>-->
+							</ul>
+						</nav>
+					</header>
+					
+
+				<!-- Main -->
+
+					<div id="main">
+
+						<!-- Intro -->
+
+							<article id="intro">
+								<h2 class="major">¿Quiénes somos?</h2>
+								<div width=25%></div><div ><img src="images/Sanjo.jpg" alt="" height="80%" width="100%"></div>
+								<p>Somos un grupo de cinco alumnos del <strong><a href="https://colegiosanjose.org">Colegio San José</a></strong>
+								de Valladolid, España. Eqolibrium nació como proyecto de nuestra clase de Tecnologías de la Información y la Comuniación y estaba destinado a
+								participar en el concurso de emprendimiento joven  <strong><a href="https://gigasforschools.org">Gigas for Schools</a></strong>.</p>
+								<p>
+								Esta no fue nuestra primera idea, de hecho, no era nuestra idea actuar en un principio en el campo del ecologismo, sino en el de la salud.<br>
+								Sin embargo, no encontramos la forma de innovar como queríamos en este sector, y al final nos decantamos por ayudar a la lucha por el clima.<br>
+								Pero... ¿cómo podíamos hacer algo diferente en un entorno tan trabajado? Bueno, tras realizar unas entrevistas a personas de nuestro entorno y a un grupo ecologista de nuestra ciudad, encontramos que se tenía una visión un tanto agresiva y politizada de este movimiento.<br />
+								Por ello nuestro lema "La mano amiga del ecologismo", queríamos ofrecer una visión más amable y conciliadora de esta iniciativa.
+								Luego llegaba el otro problema ¿cómo conseguir que nuestro mensaje sea visual y efectivo?
+								Para lograrlo, decidimos emplear la <strong><a href="#Huella">huella ecológica</a></strong>, ya que nos parece un concepto muy ilustrativo del impacto que tienen las acciones de cada uno de nosotros en nuestro planeta.
+								Además, y siguiendo nuestro lema, no solo queríamos enseñar los problemas que causan nuestros usuarios, queríamos ofrecerles soluciones viables y personalizadas.
+								Como queríamos ser algo más que un cuestionario, decidimos actuar más activamente, a través de las <strong><a href="#Donaciones">donaciones</a></strong>, y compartiendo <strong><a href="#Info">información fiable.</a></strong>
+								
+								</p>
+							</article>
+
+							<!-- ARTÍCULOS E INFORMACIÓN -->
+
+							<article id="Info">
+								<h2 class="major">Articulos e información</h2>
+								<span class="image main"><img src="images/tierrachuli.gif" alt="" /></span>
+								<h4>Algunos conceptos que deberías conocer para ser más Eco-Friendly:</h4>
+								<ul>
+									<li><a href="#OP">Obsolescencia programada y cómo evitarla</a></li>
+									<li><a href="#">¿Dónde debe ir cada residuo? Aprende a reciclar</a></li>
+									<li><a href="#">¿Qué es la biodiversidad? ¿Por qué es tan importante?</a></li>
+									<li><a href="#">¿Qué son el desarrollo sostenible y los ODS?</a></li>
+								</ul>
+								<h4>Aquí tienes una serie de artículos y sitios web que te pueden interesar:</h4>
+								<ul>
+									<li><a href="https://www.youtube.com/c/NatGeo">Canal de YouTube de National Geographic</a></li>
+									<li><a href="https://www.ecologiaverde.com/la-importancia-de-las-abejas-522.html">La importancia y peligros de las abejas</a></li>
+									<li><a href="https://www.un.org/es/climatechange/what-is-climate-change">¿Qué es el cambio climático? Explicado por las Naciones Unidas</a></li>
+									<li><a href="https://teamseas.org/">Un ejemplo de iniciativa joven exitosa: Team Seas</a></li>
+								</ul>
+															</article>
+
+
+						<!-- HUELLA ECOLÓGICA -->
+
+							<article id="Huella">
+								<h2 class="major">¿Qué es la huella ecológica?</h2>
+								<div align="center"></div><div class="huella"></div> <br>
+								<p>La huella ecológica, también conocida como huella medioambiental, es una forma de medir el impacto que la humanidad ejerce sobre el planeta. Es la superficie ecológicamente productiva necesaria para producir los recursos consumidos por un individuo, así como la necesaria para absorber los residuos que genera.<br> ¿Quieres conocer tu impacto medioambiental?<br>
+								<div align="center">
+								<a href="#Edad"><button type="button" class="btn btn-success">CLICA AQUÍ</button></a>
+							</div>
+								</p>
+							</article>
+
+						<!-- WIP -->
+
+							<article id="WIP">
+								<h2 class="major">¡Estamos trabajando en ello!</h2>
+								<div class="hourglass"></div>
+								<!--<div><img src="images/Antonio.jfif" alt="" /></div>-->
+								<p>Con un par de cafés más, aquí habrá una ilustración muy chula que te indicará tu huella ecológica, ¡perdón por la espera!
+								</p>
+							</article>
+
+
+						<!-- Donaciones -->
+
+							<article id="donaciones">
+								<h2 class="major">Donaciones </h2> <figure class="moneda"></figure>
+								<!--<img class="cerdito" src="images/hucha.png" alt=""><figure class="moneda2"></figure>-->
+								<p><h4> ¿Cómo funciona el sistema de donaciones?</h4></p>
+								<p>Las donaciones, juntos con los anuncios que aparecerán en este sitio web en un futuro, nos ayudarán a poder mantener esta URL activa y actualizada.<br>
+								A su vez, nos comprometemos a utilizar la totalidad del excedente para ayudar en la financiación de distintos proyectos ecológicos, uno cada 3 meses.<br />
+								Para decidir qué proyecto financiaremos, nuestros usuarios pueden votar en la encuesta trimestral de nuestra <strong><a href="https://twitter.com/eqolibriumvall?s=21">cuenta de Twitter</a></strong>.</p>
+								Los proyectos candidatos de este trimestre son:
+								<ul>
+									<li><strong>La hoja verde</strong></li>
+									<li><strong>El agua azul</strong></li>
+									<li><strong>El loro rojo</strong></li>
+									<li><strong>El Sol amarillo</strong></li>
+								</ul>
+								<p>¿Quieres ayudarnos a financiar a uno de estos proyectos ecológicos? <br><strong><a href="#Dona">PUEDES DONAR AQUÍ</a></strong></p>
+							</article>
+
+						<!-- Edad -->
+
+						<article id="Edad">
+							<h2 class="major"> Antes de empezar... </h2>
+							<div align="center"><h4> Por favor, indique su edad: </h4></div><div align="center">
+							<form action="" method="get">
+   							<input type="range"  width="100%" id="ages" name="ages" min="1" max="99" step="1" value="25" onchange="document.getElementById('age').value=value">
+  							<!--<input type="submit" value="Submit">-->
+  							<br><br>
+  							<div align="center"><h2><output id="age" name="age" for="ages"> 30 </output></h2></div>
+							</form>
+							<p> (Esto es para poder personalizar mejor tus preguntas, no lo usaremos para ningún otro motivo ni quedará registrado una vez termines el cuestionario)</p>
+							</div>
+							<a href="#CuestionarioAlimentacion"><button type="button" class="btn btn-primary">Continuar</button></a><br>
+						</article>
+
+						<!-- Cuestionario Alimentación-->
+
+						<article id="CuestionarioAlimentacion" name="Alimentacion">
+							<h2 class="QuizzTitle"> Cuestionario </h2>
+							<a href="#Edad"><button type="button" class="btn btn-primary">Volver</button></a><br>
+							<br>
+							<h4> Marca la opción de "Fundamental" si es, por alguna razón, es imposible cambiar el hábito de vida que se te pregunta.</h4>
+							<h3> 1. Alimentación </h3>
+								<ul><li><p><strong>¿Cuántas raciones de fruta comes a la semana? (Considera 200g/ración)</strong></p>
+									<select id="Fruta">
+										<option value=0>&nbsp</option>
+										<option value=0.00081> Menos de una ración a la semana </option>
+										<option value=0.00162>1 a 2 raciones a la semana</option>
+										<option value=0.00486>3 a 5 raciones a la semana</option>
+										<option value=0.00972>6 a 8 raciones a la semana</option>
+										<option value=0.01854>Más de 8 raciones a la semana</option>
+									</select> <br>
+									<input type="checkbox" id="Fundamental" value="1"><label for="Fundamental"> Fundamental </label></input>
+									<br><br>
+								</li>
+								<li><p><strong>¿Cuántas raciones de verdura comes a la semana? (Considera 200g/ración)</strong></p>
+									<select id="Verdura">
+										<option value=0>&nbsp</option>
+										<option value=0.000432> Menos de una ración a la semana </option>
+										<option value=0.000864>1 a 2 raciones a la semana</option>
+										<option value=0.002592>3 a 5 raciones a la semana</option>
+										<option value=0.005184>6 a 8 raciones a la semana</option>
+										<option value=0.0075>Más de 8 raciones a la semana</option>
+									</select> <br>
+									<input type="checkbox" id="Fundamental2" value="2"><label for="Fundamental2"> Fundamental </label></input>
+									<br><br>
+								</li>
+								<li><p><strong>¿Cuántas piezas de pan comes a la semana?</strong></p>
+									<select id="Pan">
+										<option value=0>&nbsp</option>
+										<option value=0>No tomo pan regularmente</option>
+										<option value=0.00029565>1 a 2 raciones a la semana</option>
+										<option value=0.0007884>3 a 5 raciones a la semana</option>
+										<option value=0.0013797>6 a 8 raciones a la semana</option>
+										<option value=0.0017739>8 a 10 raciones a la semana</option>
+										<option value=0.0025623>11 de 15 raciones a la semana</option>
+										<option value=0.003>Más de 15 raciones a la semana </option>
+									</select> <br>
+									<input type="checkbox" id="Fundamental3" value="1"><label for="Fundamental3"> Fundamental </label>
+									<br><br>
+								</li>
+								<li><p><strong>¿Cuántas veces a la semana comes carne de res (vacuno) ?</strong></p>
+									<select id="CarneVacuno">
+										<option value=0>&nbsp</option>
+										<option value=0>No como carne vacuna</option>
+										<option value=0.1944>1 a 2 veces por semana</option>
+										<option value=0.5184>3 a 5 veces por semana</option>
+										<option value=0.9072>6 a 8 veces por semana</option>
+										<option value=1>Más de 8 veces por semana</option>
+									</select> <br>
+									<input type="checkbox" id="Fundamental4" value="1"><label for="Fundamental4"> Fundamental </label>
+									<br><br>
+								</li>
+								<li><p><strong>¿Cuántas veces a la semana comes carne de pollo?</strong></p>
+									<select id="CarnePollo">
+										<option value=0>&nbsp</option>
+										<option value=0>No como carne de pollo</option>
+										<option value=0.01944>1 a 2 veces por semana</option>
+										<option value=0.05184>3 a 5 veces por semana</option>
+										<option value=0.09072>6 a 8 veces por semana</option>
+										<option value=0.1>Más de 8 veces por semana</option>
+									</select> <br>
+									<input type="checkbox" id="Fundamental5" value="1"><label for="Fundamental5"> Fundamental </label>
+									<br><br>
+								</li>
+								<li><p><strong>¿Cuántas veces a la semana comes carne de cerdo?</strong></p>
+									<select id="CarneCerdo">
+										<option value=0>&nbsp</option>
+										<option value=0>No como carne de cerdo</option>
+										<option value=0.02268>1 a 2 veces por semana</option>
+										<option value=0.06048>3 a 5 veces por semana</option>
+										<option value=0.10584>6 a 8 veces por semana</option>
+										<option value=0.12>Más de 8 veces por semana</option>
+									</select> <br>
+									<input type="checkbox" id="Fundamental6" value="1"><label for="Fundamental6"> Fundamental </label>
+									<br><br>
+								</li>
+								<li><p><strong>¿Cuántas veces AL MES consumes pescado y/o marisco?</strong></p>
+									<select id="Pescado">
+										<option value=0>&nbsp</option>
+										<option value=0>No como pescado ni marisco</option>
+										<option value=0.00432>1 a 2 al mes</option>
+										<option value=0.01152>3 a 5 al mes</option>
+										<option value=0.02016>6 a 8 al mes</option>
+										<option value=0.03168>Más de 8 al mes</option>
+									</select> <br>
+									<input type="checkbox" id="Fundamental7" value="1"><label for="Fundamental7"> Fundamental </label>
+									<br><br>
+								</li>
+								<li><p><strong>¿Cuántas veces a la semana tomas leche? Considera 250ml cada vez</strong></p>
+									<select id="Leche">
+										<option value=0>&nbsp</option>
+										<option value=0>No tomo leche</option>
+										<option value=0.009828>1 a 4 veces por semana</option>
+										<option value=0.019656>5 a 8 veces por semana</option>
+										<option value=0.029484>9 a 12 veces por semana</option>
+										<option value=0.039312>Más de 12 veces por semana</option>
+									</select> <br>
+									<input type="checkbox" id="Fundamental8" value="1"><label for="Fundamental8"> Fundamental </label>
+									<br><br>
+								</li>
+								<li><p><strong>¿Cuántas veces a la semana tomas refresco en lata?</strong></p>
+									<select id="Refresco">
+										<option value=0>&nbsp</option>
+										<option value=0>No tomo refrescos</option>
+										<option value=0.00324>1 a 2 refrescos a la semana</option>
+										<option value=0.00648>3 a 4 refrescos a la semana</option>
+										<option value=0.00972>5 a 6 refrescos a la semana</option>
+										<option value=0.015>Más de 6 refrescos a la semana</option>
+									</select> <br>
+									<input type="checkbox" id="Fundamental9" value="1"><label for="Fundamental9"> Fundamental </label>
+									<br><br>
+								</li>
+								<li><p><strong>¿Cuántos cigarros fumas cada día?</strong></p>
+									<select id="Cigarros">
+										<option value=0>&nbsp</option>
+										<option value=0>No fumo</option>
+										<option value=0.0025>Fumo, pero no llego a uno al día</option>
+										<option value=0.005>1 al día</option>
+										<option value=0.025>Entre 2 y 5 al día</option>
+										<option value=0.05>Entre 6 y 10 al día</option>
+										<option value=0.1>Más de 10 al día </option>
+									</select> <br>
+									<input type="checkbox" id="Fundamental10" value="1"><label for="Fundamental10"> Fundamental </label>
+									<br><br>
+								</li>
+								<li><p><strong>¿Cómo estimarías tu consumo semanal de alcohol? Toma como base 335ml (una lata) </strong></p>
+									<select id="Alcohol">
+										<option value=0>&nbsp</option>
+										<option value=0>No bebo, soy abstemio</option>
+										<option value=0>Bebo, pero solo en fiestas o en ocasiones especiales</option>
+										<option value=0.00075>1 a 2 latas a la semana</option>
+										<option value=0.0015>3 a 5 latas a la semana</option>
+										<option value=0.003>6 a 10 latas a la semana</option>
+										<option value=0.006>Más de 10 latas a la semana</option>
+									</select> <br>
+									<input type="checkbox" id="Fundamental11" value="1"><label for="Fundamental11"> Fundamental </label>
+									<br><br>
+								</li>
+						</ul>
+						<!--
+							<ul>
+							<li><p><strong>Indica tu rango de edad:</strong></p>
+									<select name="Edad">
+										<option>&nbsp</option>
+										<option> 0-12 </option>
+										<option>12 - 18</option>
+										<option>19 - 30</option>
+										<option>31 - 65</option>
+										<option>65+</option>
+									</select> <br>
+									<input type="checkbox" id="Fundamental" value="1"><label for="Fundamental"> Fundamental </label>
+									<br><br>
+								</li>
+							<li><p><strong>¿Cuántas horas usas el coche a la semana? </strong></p>
+									<select name="Coche">
+										<option> &nbsp</option>
+										<option> 0-6 </option>
+										<option>6-12</option>
+										<option>12-16</option>
+										<option>16-20</option>
+										<option>20+</option>
+									</select> <br>
+									<input type="checkbox" id="Fundamental" value="1"><label for="Fundamental"> Fundamental </label>
+									<br><br>
+								</li>
+								<li><p> <strong>¿Cuánto duran tus duchas aproximandamente? </strong></p>
+									<select name="Indica tu edad">
+										<option> &nbsp </option>
+										<option> No me ducho soy otaku, juego al LoL y/o al Genshin Impact </option>
+										<option>3-5 min</option>
+										<option>6-10 min</option>
+										<option>11-20 min</option>
+										<option>+20 min</option> 
+										<option>Me baño normalmente</option>
+									</select><br>
+									<input type="checkbox" id="Fundamental" value="1"><label for="Fundamental"> Fundamental </label>
+									<br><br> 
+								</li>
+							</ul>-->
+							<div class="btn-group" role="group" aria-label="Button group with nested dropdown" align="right">
+							 <a href="#CuestionarioTransporte"><button id="BotonAlimentacion" type="button" class="btn btn-primary">Continuar</button></a>
+							</article>
+
+						<!-- Cuestionario Transporte -->
+
+						<article id="CuestionarioTransporte">
+							<h2 class="major">Cuestionario</h2>
+							<a href="#CuestionarioAlimentacion"><button type="button" class="btn btn-primary">Volver</button></a><br>
+							<br>
+							<h4> 2. TRANSPORTE </h4>
+							<ul><li><p><strong>¿Cuántas distancia recorrer en coche y/o taxi semanalmente?</strong></p>
+									<select id="t1">
+										<option value=0>&nbsp</option>
+										<option value=0> No tengo coche o no lo utilizo prácticamente nada</option>
+										<option value=0.007722>Menos de 5km a la semana</option>
+										<option value=0.011583>Entre 5km y 10km a la semana</option>
+										<option value=0.019305>Entre 11km y 15km a la semana</option>
+										<option value=0.027027>Entre 16km y 20km a la semana </option>
+										<option value=0.03861>Entre 20 km y 30km a la semana</option>
+										<option value=0.061776>Entre 30 km y 50km a la semana</option>
+										<option value=0.11583>Entre 50 km y 100km a la semana</option>
+										<option value=0.23166>Entre 100 km y 200km a la semana</option>
+										<option value=0.46232>Entre 200 km y 400km a la semana</option>
+										<option value=0.7722>Más de 400km a la semana</option>
+									</select> <br>
+									<input type="checkbox" id="Fundamental12" value="1"><label for="Fundamental12"> Fundamental </label></input>
+									<br><br>
+								</li>
+								<li><p><strong>¿Cuántas horas viajas en avión al año?</strong></p>
+									<select id="t2">
+										<option value=0>&nbsp</option>
+										<option value=0> No utilizo el transporte aéreo</option>
+										<option value=0.106362>Menos de dos horas anuales</option>
+										<option value=0.265905>Entre 3 y 8 horas anuales</option>
+										<option value=0.6647625>Entre 9 y 16 horas anuales</option>
+										<option value=1.116801>Entre 17 y 25 horas anuales</option>
+										<option value=1.329525>Más de 25 horas anuales </option>
+									</select> <br>
+									<input type="checkbox" id="Fundamental13" value="1"><label for="Fundamental13"> Fundamental </label></input>
+									<br><br>
+								</li>
+								<li><p><strong>¿Cuántos kilómetros recorres diariamente en transporte público?</strong></p>
+									<select id="t3">
+										<option value=0>&nbsp</option>
+										<option value=0>No utilizo el transporte público</option>
+										<option value=0.0073> Menos de 2km diarios</option>
+										<option value=0.0146>Entre 2 y 6 km diarios</option>
+										<option value=0.034675>Entre 7 y 12 km diarios</option>
+										<option value=0.056575>Entre 13 y 18 km diarios</option>
+										<option value=0.073>Más de 18 km diarios</option>
+									</select> <br>
+									<input type="checkbox" id="Fundamental14" value="1"><label for="Fundamental14"> Fundamental </label></input>
+									<br><br>
+								</li>
+							</ul>
+							<p> Selecciona la(s) opciones con las que te identifiques </p>
+							<input type="checkbox" id="Barco" value="1"><label for="Barco"> Dispongo de un barco motorizado o utilizo uno en vacaciones </label></input>
+							<input type="checkbox" id="Tren" value="1"><label for="Tren"> Me desplazo en tren regularmente </label></input>
+							<br><br>
+							<p><strong>Y antes de pasar a la siguiente parte, escoge la opción que más se identifique con tu vivienda: </strong> </p>
+									<select id="e0">
+										<option>&nbsp</option>
+										<option> Adosado </option>
+										<option> Chalet de ciudad</option>
+										<option> Casa de pueblo </option>
+										<option> Piso</option>
+										<option>Residencia</option>
+									</select>
+									<br><br>
+							<a href="#CuestionarioEnergia"><button id="BotonTransporte" type="button" class="btn btn-primary">Continuar</button></a>
+						</article>
+
+						<!-- Cuestionario Energía -->
+
+						<article id="CuestionarioEnergia">
+							<h2 class="major">Cuestionario</h2>
+							<button type="button" class="btn btn-primary"><a href="#CuestionarioTransporte">Volver</a></button><br>
+							<br>
+							<h4> 3. Energía </h4>
+							<ul><li><p><strong>¿Cuántos meses al año tienes la calefacción en tu casa?</strong></p>
+									<select id="e1">
+										<option value=0>&nbsp</option>
+										<option value=0>No tengo calefacción en mi casa </option> 
+										<option value=0.066> Menos de 2 meses al año</option>
+										<option value=0.099>Entre 2 y 4 meses al año</option>
+										<option value=0.2>Entre 5 y 7 meses al año</option>
+										<option value=0.3>Entre 8 y 10 meses al año</option>
+										<option value=0.47>Más de 10 meses al año</option>
+									</select> <br>
+									<input type="checkbox" id="Fundamental12" value="1"><label for="Fundamental12"> Fundamental </label></input>
+									<br><br>
+								</li>
+								<li><p><strong>¿Cuántos meses al año tienes el aire acondicionado en tu casa?</strong></p>
+									<select id="e6">
+										<option value=0>&nbsp</option>
+										<option value=0>No tengo aire acondicionado en mi casa </option> 
+										<option value=0.033>Menos de 2 meses al año</option>
+										<option value=0.066>Entre 2 y 4 meses al año</option>
+										<option value=0.099>Entre 5 y 7 meses al año</option>
+										<option value=0.2>Entre 8 y 10 meses al año</option>
+										<option value=0.3>Más de 10 meses al año</option>
+									</select> <br>
+									<input type="checkbox" id="Fundamental12" value="1"><label for="Fundamental12"> Fundamental </label></input>
+									<br><br>
+								</li>
+								<li><p><strong>¿Qué tipo de luces tienes mayoritariamente en tu casa?</strong></p>
+									<select id="e2">
+										<option value=0>&nbsp</option>
+										<option value=0> No tengo luces </option>
+										<option value=0.00438>Luces LED</option>
+										<option value=0.023528>Velas</option>
+										<option value=0.023528>Halógenos</option>
+										<option value=0.03504>Bombillas incandescentes</option>
+										<option value=0.00876>Bombillas o tubos fluorescentes</option>
+									</select> <br>
+									<input type="checkbox" id="Fundamental13" value="1"><label for="Fundamental13"> Fundamental </label></input>
+									<br><br>
+								</li>
+								<li><p><strong>¿Cuál es la calidad media de tus electrodomésticos caseros?</strong></p>
+									<select id="e3">
+										<option value=0>&nbsp</option>
+										<option value=0.11616> A+++</option>
+										<option value=0.17336>A++</option>
+										<option value=0.23056>A+</option>
+										<option value=0.28864>A</option>
+										<option value=0.39336>B</option>
+										<option value=0.4972>C</option>
+										<option value=0.57816>D</option>
+									</select> <br>
+									<input type="checkbox" id="Fundamental14" value="1"><label for="Fundamental14"> Fundamental </label></input>
+									<br><br>
+								</li>
+								<li><p><strong>¿Cuánto tiempo a la semana tienes encendida la televisión?</strong></p>
+									<select id="e4">
+										<option value=0>&nbsp</option>
+										<option value=0>No tengo televisión</option>
+										<option value=0.0027972>Menos de 7 horas a la semana</option>
+										<option value=0.003996>8 a 12 hrs a la semana</option>
+										<option value=0.005994>13 a 17 hrs a la semana</option>
+										<option value=0.007992>18 a 22 hrs a la semana</option>
+										<option value=0.0101898>23 a 28 hrs a la semana</option>
+										<option value=0.011988>Más de 28 horas a la semana</option>
+									</select> <br>
+									<input type="checkbox" id="Fundamental14" value="1"><label for="Fundamental14"> Fundamental </label></input>
+									<br><br>
+								</li>
+								<li><p><strong>¿Cuánto tiempo a la semana tienes encendido el ordenador?</strong></p>
+									<select id="e5">
+										<option value=0>&nbsp</option>
+										<option value=0>No tengo ordenador</option>
+										<option value=0.0081>Menos de 5 horas a la semana</option>
+										<option value=0.01215>5 a 9 hrs a la semana</option>
+										<option value=0.01944>10 a 14 hrs a la semana</option>
+										<option value=0.02835>15 a 20 hrs a la semana</option>
+										<option value=0.03726>21 a 25 hrs a la semana</option>
+										<option value=0.0471>26 a 35 hrs a la semana</option>
+										<option value=0.0545>Más de 35 horas a la semana</option>
+									</select> <br>
+									<input type="checkbox" id="Fundamental14" value="1"><label for="Fundamental14"> Fundamental </label></input>
+									<br>
+								</li>
+							</ul>
+							<p> Para acabar este apartado, señala de cuáles de los siguiente electrodomésticos dispones y utilizas con cierta regularidad</p>
+							<ul><li>
+							<input type="checkbox" id="Barco" value="1"><label for="Barco"> Secadora </label></input></li>
+						</ul>
+						<a href="#CuestionarioAgua"><button id="BotonEnergia" type="button" class="btn btn-primary">Continuar</button></a>
+						</article>
+
+						<!-- Cuestionario Agua -->
+
+						<article id="CuestionarioAgua">
+							<h2 class="major">Cuestionario</h2>
+							<a href="#CuestionarioAgua"><button id="BotonEnergia" type="button" class="btn btn-primary">Volver</button></a><br>
+							<br>
+							<h4> 4. Consumo de agua </h4>
+							<ul>
+							<li><p> <strong>¿Cuánto duran tus duchas aproximandamente? </strong></p>
+									<select id="a1">
+										<option value=0> &nbsp </option>
+										<option value=0.00885> Menos de 3 min </option>
+										<option value=0.01475>3-5 min</option>
+										<option value=0.0295>6-10 min</option>
+										<option value=0.059>11-20 min</option>
+										<option value=0.0885>+20 min</option> 
+									</select><br>
+									<input type="checkbox" id="Fundamental" value="1"><label for="Fundamental"> Fundamental </label>
+									<br><br> 
+								</li>
+								<li><p> <strong>¿Te sueles bañar regularmente? </strong></p>
+									<select id="a2">
+										<option value=0> &nbsp </option>
+										<option value=0> No, siempre me ducho </option>
+										<option value=0.0192>Me baño en alguna ocasión, pero no con mucha regularidad</option>
+										<option value=0.0432>Una vez a la semana</option>
+										<option value=0.1296>Entre 2 y 4 veces a a la semana</option>
+										<option value=0.25>Más de 4 veces a la semana</option> 
+									</select><br>
+									<input type="checkbox" id="Fundamental" value="1"><label for="Fundamental"> Fundamental </label>
+									<br><br> 
+								</li>
+								<li><p><strong>Al lavarme los dientes...</strong></p>
+									<select id="a3">
+										<option value=0>&nbsp</option>
+										<option value=0.192> Dejo el grifo abierto mientras me cepillo</option>
+										<option value=0.05>Solo abro el grifo para enjuagarme</option>
+										<option value=0.004>Utilizo un vaso</option>
+									</select> <br>
+									<input type="checkbox" id="Fundamental13" value="1"><label for="Fundamental13"> Fundamental </label></input>
+									<br><br>
+								</li>
+							</ul>
+								<p> Selecciona la(s) opciones con las que te identifiques </p>
+							<input type="checkbox" id="Piscina" value="1"><label for="Piscina"> Tengo una piscina privada </label></input>
+							<input type="checkbox" id="Aspersor" value="1"><label for="Aspersor"> Tengo un jardín con un sistema de aspersores</label></input>
+							<br><br>
+							<a href="#CuestionarioResiduos"><button id="BotonAgua" type="button" class="btn btn-primary">Continuar</button></a>
+						</article>
+
+						<!-- Cuestionario Residuos -->
+
+						<article id="CuestionarioResiduos">
+							<h2 class="major">Cuestionario</h2>
+							<a href="#CuestionarioAgua"><button type="button" class="btn btn-primary">Volver</button></a><br>
+							<br>
+							<h4> 5.Residuos </h4>
+							<ul>
+							<li><p> <strong>Al ir al supermercado...</strong></p>
+									<select id="r1">
+										<option value=0> &nbsp </option>
+										<option value=0.2> Utilizo bolsas de plástico </option>
+										<option value=0.005> Utilizo bolsas de usar y tirar de cartón u otro material</option>
+										<option value=0> Utilizo mi propia bolsa de tela</option>
+										<option value=0> Utilizo un carro de la compra</option> 
+									</select><br>
+									<input type="checkbox" id="Fundamental" value="1"><label for="Fundamental"> Fundamental </label>
+									<br><br> 
+								</li>
+								<li><p> <strong>En cuanto al empaquetado de lo que compro...</strong></p>
+									<select id="r2">
+										<option value=0> &nbsp </option>
+										<option value=0.0945> No me fijo </option>
+										<option value=0> Intento evitar comprar artículos con excesiva cantidad de envoltorios plásticos</option>
+									</select><br>
+									<input type="checkbox" id="Fundamental" value="1"><label for="Fundamental"> Fundamental </label>
+									<br><br> 
+								</li>
+								<li><p><strong>¿Cuántas botellas de plástico tiras cada semana?</strong></p>
+									<select id="r3">
+										<option value=0>&nbsp</option>
+										<option value=0> Utilizo mi propia botella, por lo que prácticamente ninguna</option>
+										<option value=0.01701>Menos de 5 a la semana</option>
+										<option value=0.025515>Entre 6 y 10 a la semana</option>
+										<option value=0.042525>Entre 11 y 15 a la semana</option>
+										<option value=0.059535>Entre 16 y 20 a la semana</option>
+										<option value=0.08505>Más de 20 a la semana</option>
+									</select> <br>
+									<input type="checkbox" id="Fundamental13" value="1"><label for="Fundamental13"> Fundamental </label></input>
+									<br><br>
+								</li>
+								<li><p><strong>A la hora de reciclar...</strong></p>
+									<select id="r4">
+										<option value=0>&nbsp</option>
+										<option value=0.3>Tengo solo una papelera/contenedor a la que van todos los residuos</option>
+										<option value=0.1>Tenemos diferentes papeleras/contenedores, pero desconozco dónde van algunos residuos</option>
+										<option value=0.05>Sé dónde va cada residuo con exactitud y soy muy estricto con el reciclaje</option>
+									</select> <br>
+									<input type="checkbox" id="Fundamental13" value="1"><label for="Fundamental13"> Fundamental </label></input>
+									<br><br>
+								</li>
+							</ul>
+								<p> Selecciona la(s) opciones con las que te identifiques </p>
+							<input type="checkbox" id="Papel" value="1"><label for="Papel"> Utilizo papel reciclado </label></input>
+							<br><br>
+							<a href="#Medidor"><button id="BotonResiduos" type="button" class="btn btn-primary">Continuar</button></a>
+						</article>
+
+						<!-- Medidor de Huella Ecológica-->
+
+						<article id="Medidor">
+								<h2 class="major">Esta es tu huella ecológica</h2>
+								<div align="center"><button id="BotonResultados" type="button" class="btn btn-primary" onclick="mostrarresultados()">Ver Resultados</button> </div>
+								<div align="center" id="Resultados"></div>
+								<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+							</article>
+
+						<!-- Log In-->
+
+							<article id="LogIn">
+								<h2 class="major"> Iniciar Sesión </h2>
+							<form>
+													<div class="form-group">
+						    <label for="exampleInputEmail1"><strong>Dirección de Correo Electrónico / Nombre de Usuario</strong></label>
+						    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+						    <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu correo con terceros.</small><br><br>
+						  </div>
+						  <div class="form-group">
+						    <label for="exampleInputPassword1"><strong>Contraseña</strong></label>
+						    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+						  </div>
+						  <div class="form-group form-check">
+						    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+						  </div>
+						  <br>
+						  <div align="center">
+						  <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+						<br>
+						<br>
+						<p> ¿No tienes cuenta aún? <a href="#Register"><font color="cyan"> Regístrate aquí</a> </font>
+							</div>
+						</form>
+						</article>
+
+						<!-- Register -->
+
+						<article id="Register">
+						<h2 class="major"> Registrarse </h2>
+							<form>
+													<div class="form-group">
+						    <label for="exampleInputEmail1"><strong>Dirección de Correo Electrónico</strong></label>
+						    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+						    <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu correo con terceros.</small><br><br>
+						  </div>
+						  						<div class="form-group">
+						    <label for="exampleInputEmail1"><strong>Nombre de Usuario</strong></label>
+						    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+						  </div>
+						  <div class="form-group"><br>
+						    <label for="exampleInputPassword1"><strong>Contraseña</strong></label>
+						    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+						  </div>
+						  <div class="form-group"><br>
+						    <label for="exampleInputPassword1"><strong>Confirmar contraseña</strong></label>
+						    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+						  </div>
+						  <div class="form-group form-check">
+						    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+						  </div>
+						  <br>
+						  <div align="center">
+						  <a href=""><button type="submit" class="btn btn-primary">Registrase</button></a>
+						<br>
+						</form>
+						</article>
+						<!-- Contact -->
+
+							<article id="contact">
+								<h2 class="major">Contáctanos</h2>
+								<div class="deer"></div>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Nombre</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Correo Electrónico</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Mensaje</label>
+											<textarea name="message" id="message" rows="4"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Mandar" class="primary" /></li>
+										<li><input type="reset" value="Resetear" /></li>
+									</ul>
+								</form>
+								<ul class="icons">
+									<li><a href="https://twitter.com/eqolibriumvall?s=21" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="https://facebook.com/profile.php?id=100080590821041" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="https://instagram.com/eqolibriumvall?igshid=YmMyMYA2M2Y=" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="https://youtube.com/channel/UCm8KuIQBus2HUFLEPxhAhfA" class="icon brands fa-youtube"><span class="label">Youtube</span></a></li>
+								</ul>
+								<p> <strong>Gmail: eqolibriumvall@gmail.com</strong></p>
+								
+							</article>
+
+						<!-- OP -->
+
+						<article id="OP">
+							<h2 class="major"> La Obsolescencia Programada</h2>
+							<div><img src="images/OP.jpg" height="250" width="600"></img></div>
+							<p><h4>¿Qué es la obsolescencia programada?</h4></p>
+							<p>La obsolescencia programada es la vida útil que le da una fábrica o empresa a un producto, cuando pase este periodo de vida útil el producto se volverá obsoleto, inútil.
+
+Esto se creó para que el consumidor se viera obligado a adquirir un producto nuevo igual o similar. La mayoría de los productos están “programados para morir”. Muchas veces cuando estos dispositivos mueren es más económico adquirir uno nuevo que reparar el que ya tenemos.</p>
+							<p><h4>¿Cómo puedo evitar seguir esta tendencia consumista?</h4></p>
+							<p>Aquí tienes una serie de artículos que de darán una serie de consejos para evitarla:</p>
+							<ul>
+								<li><a href="https://computerhoy.com/listas/tecnologia/trucos-alargar-vida-electrodomesticos-evitar-obsolescencia-programada-802947">Trucos para alargar la vida de los electrodomésticos y evitar la obsolescencia programada</a></li>
+								<li><a href="https://www.sostenibilidad.com/desarrollo-sostenible/asi-lucha-contra-obsolescencia-programada/?_adin=02021864894">Así es la lucha contra la obsolescencia programada</a></li>
+								<li><a href="https://elpais.com/extra/2021-06-04/guerra-contra-la-obsolescencia-programada.html">Guerra contra la obsolescencia programada</a></li>
+								<li><a href="https://www.manosverdes.co/alternativas-a-la-obsolescencia-programada/">Alternativas a la obsolescencia programada</a></li>
+							</ul>
+						</article>
+
+					</div>
+
+				<!-- Footer -->
+
+					<footer id="footer">
+						<p ><strong>Web en desarrollo, esto solo es un prototipo</strong> </p>
+						<p> <strong> Si encuentras algún error, por favor, escríbenos un correo desde "Contáctanos", ¡gracias!</strong></p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/Cuestionario.js" type="text/javascript"></script>
+			<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+	</body>
+</html>
