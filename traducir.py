@@ -14,6 +14,17 @@ translator = GoogleTranslator(source='es', target='en')
 etiquetas_a_traducir = soup.find_all(['p', 'h1', 'h2', 'h3', 'span', 'li'])
 
 for tag in etiquetas_a_traducir:
+    if tag.string and tag.string.strip():
+        texto_original = tag.string.strip()
+        try:
+            # Intentamos traducir
+            texto_traducido = translator.translate(texto_original)
+            tag.string.replace_with(texto_traducido)
+        except Exception as e:
+            # Si falla, avisamos pero NO detenemos el programa
+            print(f"AVISO: Saltando frase problemática: '{texto_original}'.")
+
+for tag in etiquetas_a_traducir:
     if tag.string and tag.string.strip(): # Solo traducir si hay texto
         texto_traducido = translator.translate(tag.string.strip())
         tag.string.replace_with(texto_traducido)
