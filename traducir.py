@@ -11,7 +11,7 @@ nombre_archivo = 'index.html'
 with open(nombre_archivo, 'r', encoding='utf-8') as f:
     soup = BeautifulSoup(f, 'html.parser')
 
-translator = MyMemoryTranslator(source='es', target='en')
+translator = MyMemoryTranslator(source='es-ES', target='en-GB')
 etiquetas_a_traducir = soup.find_all(['p', 'h1', 'h2', 'h3', 'span', 'li'])
 
 for tag in etiquetas_a_traducir:
