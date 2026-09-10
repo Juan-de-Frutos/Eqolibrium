@@ -27,8 +27,11 @@ for tag in etiquetas_a_traducir:
 
 with open(f'output/{nombre_archivo}', 'w', encoding='utf-8') as f:
     f.write(str(soup))
-    
+
 if os.path.exists('images'):
     shutil.copytree('images', 'output/images', dirs_exist_ok=True)
+
+if os.path.exists('assets'):
+    shutil.copytree('assets', 'output/assets', dirs_exist_ok=True)
 
 print("¡Traducción completada con éxito!")
