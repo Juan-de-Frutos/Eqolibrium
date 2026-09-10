@@ -33,7 +33,7 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.DESTINATION_REPO_TOKEN }}
         with:
           source-directory: 'output' # Solo enviamos la carpeta con lo traducido y las imágenes
-          destination-github-username: 'TU_USUARIO_DE_GITHUB' 
+          destination-github-username: 'Juan-de-Frutos' 
           destination-repository-name: 'eqolibrium-en'
           user-email: bot-traductor@poc.com
           commit-message: "Traducción automática de prueba"
